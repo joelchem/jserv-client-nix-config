@@ -47,7 +47,7 @@
   users.users.joelchem = {
     isNormalUser = true;
     description = "Joel";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker"];
     shell = pkgs.bash;
     home = "/home/joelchem";
   };
@@ -61,6 +61,8 @@
     git
   ];
   
+  virtualisation.docker.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
 
