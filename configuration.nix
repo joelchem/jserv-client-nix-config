@@ -52,6 +52,11 @@
     home = "/home/joelchem";
   };
 
+  users.users.joelchem.openssh.authorizedKeys.keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYgINk300qVFOkS98l1rP4MU2r9aw1UGqRlCluR0vnWMNILhGdLZWRk9R2OdJ3xcCCem0CI/p8SBQs5alHBPk66kMO3+kcYEYRJ0clVRwDT6DDTdvWgYkj0IsXl42oOoSeJQ2Yf2eNLLXhEM1aSBPnPRr+EV0d9Z5HkmXDJBsItKHViqUDRwgj8nPAu8Zvq42HfcpCeXGOh97c41Vglg7hSQht2IekAgcxVn1vfXqh5NtR/JOfidtNd5JIMd2GEFUkz7SkiA2VMEDX1SrgTxK98IAxeby0LEjgFs/Y/+Vfs6xtbSjYyThpXqdwrhaIcVOfApkdS+U1Ydm5qRfWZRMR joelchem"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEvAx5YehYS95U1lppIiUvQEmztx3APrK516UF117tz1 joelchem"
+  ];
+
   boot.loader.grub.device = "nodev";
   
   environment.systemPackages = with pkgs; [ 
@@ -59,6 +64,7 @@
     wget
     wireguard-tools
     git
+    tree
   ];
   
   virtualisation.docker.enable = true;
