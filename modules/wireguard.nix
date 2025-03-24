@@ -7,13 +7,11 @@
       ips = [ "10.0.0.2/24" ];
       privateKeyFile = "/etc/nixos/secrets/wireguard-private-key";
 
-      autoStart = true;
-      
       # Add systemd service configuration
       extraConfig = ''
         [Service]
         Restart=always
-        RestartSec=30
+        RestartSec=60
       '';
 
       peers = [
