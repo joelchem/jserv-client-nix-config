@@ -1,18 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  networking.wireguard.enable = true;
-  networking.wireguard.interfaces = {
+  networking.wg-quick.interfaces = {
     wg0 = {
-      ips = [ "10.0.0.2/24" ];
+      address = [ "10.0.0.2/24" ];
       privateKeyFile = "/etc/nixos/secrets/wireguard-private-key";
-
-      # Add systemd service configuration
-      extraConfig = ''
-        [Service]
-        Restart=always
-        RestartSec=60
-      '';
 
       peers = [
         {
@@ -23,5 +15,7 @@
         }
       ];
     };
-  }; 
+  };
+  
 }
+

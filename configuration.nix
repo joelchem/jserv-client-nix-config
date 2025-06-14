@@ -65,6 +65,9 @@
     wireguard-tools
     git
     tree
+    htop
+    neofetch
+    fastfetch
   ];
   
   virtualisation.docker.enable = true;
